@@ -1,0 +1,7 @@
+{
+    "aliases":{
+        "app-main": "AppMain.html",
+        "play-by-play-state": "states/PlayByPlayState.html",
+        "play-by-play-list-item": "layouts/PlayByPlayListItem.html"
+	}
+}

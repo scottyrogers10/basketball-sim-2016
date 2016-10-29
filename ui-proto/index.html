@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>Basketball Sim 2016</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+
+    <link href="lib/weblib/css/reset-min.css" rel="stylesheet" />
+    <link href="lib/weblib/css/material.css" rel="stylesheet" />
+
+    <script type="components/config" src="lib/weblib/components/components.json" root="lib/weblib/components/"></script>
+    <script type="components/config" src="app/components/components.json" root="app/components/"></script>
+
+    <style component="css-helpers"></style>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div component="play-by-play-state" class="absolute-fill-parent overflow-hidden"></div>
+    <script src="lib/weblib/lib/BASE/BASE.js"></script>
+    <script>
+        BASE.require.loader.setRoot("lib/weblib/lib/BASE/");
+        BASE.require.loader.setNamespace("components", "lib/weblib/components");
+        BASE.require.loader.setNamespace("app", "app/");
+        BASE.require(["BASE.web.components"]);
+    </script>
+</body>
+</html>

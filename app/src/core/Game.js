@@ -20,7 +20,38 @@ define(function (require) {
     };
 
     Game.prototype.run = function () {
+        var i = 0;
+        var self = this;
+        var offensiveTeam = null;
+        var defensiveTeam = null;
+        var possession = null;
 
+        var teams = {
+            homeTeam: function () {
+                offensiveTeam = self.homeTeam;
+                defensiveTeam = self.awayTeam;
+                possession = "awayTeam";
+            },
+            awayTeam: function () {
+                offensiveTeam = self.awayTeam;
+                defensiveTeam = self.homeTeam;
+                possession = "homeTeam";
+            }
+        };
+
+        //TODO: Jump Ball Function
+        possession = "homeTeam";
+        teams[possession]();
+
+        while (i < this.totalPossessions) {
+            var offensivePlayers = this.sortOnCourtPlayers(offensiveTeam.onCourt);
+            var defensivePlayers = this.sortOnCourtPlayers(defensiveTeam.onCourt);
+
+            var offensivePlayer = this.getOffensivePlayer(offensivePlayers);
+
+            teams[possession]();
+            i++;
+        }
     };
 
     Game.prototype.end = function () {
@@ -48,6 +79,16 @@ define(function (require) {
         var awayTeamPace = this.awayTeam.info.pace;
 
         this.totalPossessions = Math.floor(((homeTeamPace + awayTeamPace) / 2) + Math.floor(helpers.getRandNum(-5, 5)));
+    };
+
+    Game.prototype.sortOnCourtPlayers = function (players) {
+        return players.sort(function (playerA, playerB) {
+            return playerA.info.primaryPosition - playerB.info.primaryPosition;
+        });
+    };
+
+    Game.prototype.getOffensivePlayer = function (players) {
+
     };
 
     return Game;
