@@ -7,6 +7,8 @@
             left: 0;
             right: 0;
             height: 50px;
+            box-sizing: border-box;
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
         }
 
         [play-by-play-state-plays-container] {
@@ -16,7 +18,12 @@
             right: 0;
             bottom: 0;
             overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
             overflow-x: hidden;
+        }
+
+        [play-by-play-state] .visibility-hidden {
+            opacity: 0 !important;
         }
     </style>
     <div play-by-play-state-quarter-tabs-container></div>

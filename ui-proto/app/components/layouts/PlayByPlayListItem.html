@@ -1,8 +1,108 @@
 <div play-by-play-list-item controller="app.components.layouts.PlayByPlayListItem">
     <style>
         [play-by-play-list-item] {
-            padding: 0 8px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: 0 10px;
+        }
+
+        [play-by-play-list-item-container] {
+            position: relative;
+            width: 100%;
+            height: 100%
+        }
+
+        [play-by-play-list-item-time-and-score-container] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            text-align: center;
+            line-height: 14px;
+        }
+
+        [play-by-play-list-item-time-and-score-center-align] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 46px;
+        }
+
+        [play-by-play-list-item-time] {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+        }
+
+        [play-by-play-list-item-possession-team] {
+            font-size: 12px;
+        }
+
+        [play-by-play-list-item-score] {
+            font-size: 12px;
+        }
+
+        [play-by-play-list-item-details-container] {
+            position: absolute;
+            top: 0;
+            left: 80px;
+            right: 0;
+            height: 100%;
+        }
+
+        [play-by-play-list-item-primary-player-picture-container] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            text-align: center;
+        }
+
+        [play-by-play-list-item-primary-player-picture] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-size: 26px 26px;
+            background-repeat: no-repeat;
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            background-color: #e9e9e9;
+        }
+
+        [play-by-play-list-item-play-details] {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 0;
+            padding: 20px 0;
+            font-size: 14px;
+            line-height: 16px;
+            color: #424242;
         }
     </style>
-    <div tag="primary-player-name"></div>
+    <div play-by-play-list-item-container>
+        <div play-by-play-list-item-time-and-score-container>
+            <div play-by-play-list-item-time-and-score-center-align>
+                <div play-by-play-list-item-time tag="time-left"></div>
+                <div play-by-play-list-item-possession-team tag="possession-team"></div>
+                <div play-by-play-list-item-score tag="score"></div>
+            </div>
+        </div>
+        <div play-by-play-list-item-details-container>
+            <div play-by-play-list-item-primary-player-picture-container>
+                <div play-by-play-list-item-primary-player-picture tag="primary-player-picture"></div>
+            </div>
+            <div play-by-play-list-item-play-details tag="play-details"></div>
+        </div>
+    </div>
 </div>
